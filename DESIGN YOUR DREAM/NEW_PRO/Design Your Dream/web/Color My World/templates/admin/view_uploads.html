@@ -1,0 +1,181 @@
+{% include 'admin/admin_header.html' %}
+
+
+<!-- <section class="grids-1 py-5">
+	<center>
+		<h2 style="color:rgb(3, 206, 210);margin-left: -170px;">List Of</h2>
+		<h2 style="color: rgb(12, 12, 12);margin-left:180px;margin-top: -45px;">Design Uploads</h2>
+	<div class="grids py-lg-5 py-md-4" >
+		<p><a class="btn" style="color :white; background-color: darkgreen;"  href="designsreport">Print</a></p><br>
+	
+		<div class="container">
+			
+			<div class="row text-center grids-gap">
+				{% for row in data['viewdesigns'] %}
+				<div class="col-lg-3 col-md-4 col-sm-6" >
+					<div class="column">
+						<a href="#single"><img src="{{row['photo']}}" height="200" width="200"></a>
+						<h5>Designer Name :{{row['first_name']}} {{row['last_name']}}</h5><br>
+						<h6>Material :{{row['material_name']}}</h6>
+						<h6>Description :{{row['description']}}</h6>
+						<h6>Price per Piece :{{row['price_per_piece']}}</h6>
+						{% if row['status']=="pending"%}
+						<a href="?action=accept&did={{row['design_id']}}">Accept</a>
+						<a href="?action=reject&did={{row['design_id']}}">Reject</a>
+						{% endif %}
+					</div>
+				</div>
+				
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+ <br><br> -->
+
+
+
+
+<!-- <form method="post"> -->
+	<!-- <center>
+		<h2 style="color: red;">Designers Design</h2>
+<br><br>
+	<table border="1" style="width: 700px" class="table">
+			<tr>
+				<th bgcolor="pink">Designer Name</th>
+				<th bgcolor="pink">Design Name</th>
+				<th bgcolor="pink">Photo</th>
+				<th bgcolor="pink">Material Name</th>
+				<th bgcolor="pink">Description</th>
+				<th bgcolor="pink">Price per Piece</th>
+			</tr>
+			<tbody>
+				{% for row in data['viewdesigns'] %}
+				<tr>
+					<td bgcolor="pink">{{row['first_name']}} {{row['last_name']}}</td>
+					
+					<td bgcolor="pink">{{row['name']}}</td>
+					<td bgcolor="pink"><img src="{{row['photo']}}" height="100" width="100"></td>
+					<td bgcolor="pink">{{row['material_name']}}</td>
+					<td bgcolor="pink"><textarea rows="4" cols="50" readonly=""> {{row['description']}}</textarea></td>
+					<td bgcolor="pink">{{row['price_per_piece']}}</td>
+					
+					{% if row['status']=="pending"%}
+
+					<td bgcolor="pink"><a href="?action=accept&did={{row['design_id']}}">Accept</a></td>
+					<td bgcolor="pink"><a href="?action=reject&did={{row['design_id']}}">Reject</a></td>
+
+					{% endif %}
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</center>
+	</form>  -->
+
+
+
+
+
+
+
+
+	<div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Designs</h6>
+                <h1 class="mb-5">List Of Designs</h1>
+            </div>
+            <p><a class="btn" style="color :white; background-color: darkgreen; margin-left: 530px; margin-top: -30px;"  href="designsreport">Print</a></p><br>
+
+            <div class="row g-4">
+				{% for row in data['viewdesigns'] %}
+
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+							<!-- <a href="#single"><img src="/{{row['photo']}}" ></a> -->
+
+                            <img class="img-fluid" src="/{{row['photo']}}" alt="" style="width: 300px; height: 200px;">
+                        </div>
+                        <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div> -->
+                        <div class="text-center p-4">
+                            <!-- <h5 class="mb-0">Instructor Name</h5> -->
+							<h5>Designer Name :{{row['first_name']}} {{row['last_name']}}</h5><br>
+						<h6>Material :{{row['material_name']}}</h6>
+						<h6>Description :{{row['description']}}</h6>
+						<h6>Price per Piece :{{row['price_per_piece']}}</h6>
+						{% if row['status']=="pending"%}
+						<a href="?action=accept&did={{row['design_id']}}">Accept</a>
+						<a href="?action=reject&did={{row['design_id']}}">Reject</a>
+						{% endif %}
+                            <!-- <small>Designation</small> -->
+                        </div>
+                    </div>
+					
+                </div>
+				{% endfor %}
+                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Instructor Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Instructor Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Instructor Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+{% include 'admin/admin_footer.html' %}

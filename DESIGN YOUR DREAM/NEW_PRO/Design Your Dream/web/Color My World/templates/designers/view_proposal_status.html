@@ -1,0 +1,66 @@
+{% include 'designers/designer_header.html' %}
+<br><br>
+<header id="header" style="background-image: url(/static/assets/images/pxfuel\ \(3\).jpg);height: auto;background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover; margin-top: -50px;">
+
+<form method="post">
+	<center>
+		<h2 style="color:  rgb(3, 206, 210); margin-top: 20px;">User Proposals</h2>
+		<br><br>
+		<div class="table-responsive">
+
+	<table border="1" style="width: 300px" class="table table-dark">
+			<tr>
+				<th>User Name</th>
+				<th>Design</th>
+				<th>Proposed Amount</th>
+				<th>Proposal Date</th>
+				<th>Status</th>
+				<th></th>
+				<th></th>
+				<th></th>	
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				
+			</tr>
+			<tbody>
+				{% for row in data['viewproposal'] %}
+				<tr>
+					<td>{{row['uname']}}</td>
+					<td><img src="/{{row['photo']}}" height="100" width="100"></td>
+					<td>{{row['price']}}</td>
+					<td>{{row['proposal_date']}}</td>
+					<td>{{row['proposal_status']}}</td>
+
+					
+
+					{% if row['proposal_status']=="pending" %}
+					<td><a class="btn btn-primary" href="chat_room?rq_id={{row['requirement_id']}}&user_id={{row['user_id']}}">Chat</a></td><td></td>
+					<td><a href="?action=delete&ids={{row['proposal_id']}}" class="btn btn-primary">Delete</a ></td><td></td>
+
+					 {% elif  row['proposal_status']=="confirm delivery" %} 
+					<td><a href="viewpayment?ids={{row['proposal_id']}}" class="btn btn-primary">Payment</a></td>
+					<td><a class="btn btn-primary" href="chat_room?rq_id={{row['requirement_id']}}&user_id={{row['user_id']}}">Chat</a></td><td></td><td></td>
+					{% elif row['proposal_status']=="Paid" %}
+					
+					<td><a href="viewpayment?ids={{row['proposal_id']}}" class="btn btn-primary">Payment</a> <a href="?action=update&ids={{row['proposal_id']}}" class="btn btn-primary" style="margin-top: 10px;">Confirm delivery</a></td><td></td>
+					<td><a class="btn btn-primary" href="chat_room?rq_id={{row['requirement_id']}}&user_id={{row['user_id']}}">Chat</a></td><td></td>
+					
+
+
+					{% endif %}
+					<td></td>
+					<td></td>
+					<td></td>
+				
+					
+				</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+	</center>
+	
+</form>
+{% include 'designers/designer_footer.html' %}

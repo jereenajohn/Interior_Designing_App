@@ -1,0 +1,108 @@
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+	<div class="container py-5">
+		<div class="row g-5">
+			<div class="col-lg-3 col-md-6">
+				<h4 class="text-white mb-3">Quick Link</h4>
+				<a class="btn btn-link" href="viewdesigners">Designers</a>
+				<a class="btn btn-link" href="viewusers">Users</a>
+				<a class="btn btn-link" href="viewdesigns">Designs</a>
+				<a class="btn btn-link" href="viewrequirements">Sales</a>
+				<a class="btn btn-link" href="viewcomplaint">complaint</a>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<h4 class="text-white mb-3">Contact</h4>
+				<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Thodupuzha,kerala,India</p>
+				<p class="mb-2"><i class="fa fa-phone-alt me-3"></i>8157845851</p>
+				<p class="mb-2"><i class="fa fa-envelope me-3"></i>dyd@gmail.com</p>
+				<!-- <div class="d-flex pt-2">
+					<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+					<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+					<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+					<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+				</div> -->
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<h4 class="text-white mb-3">Gallery</h4>
+				<div class="row g-2 pt-2">
+					<div class="col-4">
+						<img class="img-fluid bg-light p-1" src="/static/assets/img/spacejoy-trG8989WjFA-unsplash.jpg" alt="" style="height: 50px; width: 100px;">
+					</div>
+					<div class="col-4">
+						<img class="img-fluid bg-light p-1" src="/static/assets/img/katja-rooke-77JACslA8G0-unsplash.jpg" alt="" style="height: 50px; width: 100px;">
+					</div>
+					<div class="col-4">
+						<img class="img-fluid bg-light p-1" src="/static/assets/img/spacejoy-4xRP0Ajk9ys-unsplash.jpg" alt="" style="height: 50px; width: 100px;">
+					</div>
+					<div class="col-4">
+						<img class="img-fluid bg-light p-1" src="/static/assets/img/spacejoy-PyeXkOVmG1Y-unsplash (1).jpg" alt="" style="height: 50px; width: 100px;">
+					</div>
+					<div class="col-4">
+						<img class="img-fluid bg-light p-1" src="/static/assets/img/spacejoy-9M66C_w_ToM-unsplash.jpg" alt="" style="height: 50px; width: 100px;">
+					</div>
+					<div class="col-4">
+						<img class="img-fluid bg-light p-1" src="/static/assets/img/spacejoy-trG8989WjFA-unsplash.jpg" alt=""  style="height: 50px; width: 100px;">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<h4 class="text-white mb-3">About Us</h4>
+				<p style="text-align: justify;">DYD is the art, science, and business planning of a creative, technical, sustainable, and
+                    functional interior solution that corresponds to the architecture of a space.</p>
+				<div class="position-relative mx-auto" style="max-width: 400px;">
+					<!-- <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email"> -->
+					<!-- <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="copyright">
+			<div class="row">
+				<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+					&copy; <a class="border-bottom" href="#">Design Your Dream</a>, All Right Reserved.
+
+					<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+					<!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
+					Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a> -->
+				</div>
+				<div class="col-md-6 text-center text-md-end">
+					<div class="footer-menu">
+						<a href="designerhome">Home</a>
+						<!-- <a href="">Cookies</a>
+						<a href="">Help</a> -->
+						<a href="/">logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/assets/lib/wow/wow.min.js"></script>
+<script src="/static/assets/lib/easing/easing.min.js"></script>
+<script src="/static/assets/lib/waypoints/waypoints.min.js"></script>
+<script src="/static/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="/static/assets/js/main.js"></script>
+</body>
+
+</html>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+	<script> alert ("{{ message }}")</script>
+  {% endfor %}
+{% endif %}
+{% endwith%}

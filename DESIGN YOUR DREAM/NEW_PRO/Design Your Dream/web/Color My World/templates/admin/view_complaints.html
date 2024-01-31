@@ -1,0 +1,41 @@
+{% include 'admin/admin_header.html' %}
+<br><br>
+<form method="post">
+	<center>
+		<h2 style="color: rgb(3, 206, 210);margin-left: -170px;">User</h2>
+		<h2 style="color: rgb(12, 12, 12);margin-left:80px;margin-top: -45px;">Complaints</h2>
+		<br><br>
+		<div class="table-responsive">
+
+	<table border="1" style="width: 700px" class="table table-striped table-dark">
+			<tr>
+				<th>User Name</th>
+				<th>Complaint</th>
+				
+				<th>Date</th>
+				<th>Reply</th>	
+				
+			</tr>
+			<tbody>
+				{% for row in data['viewcomplaint'] %}
+				<tr>
+					<td>{{row['first_name']}} {{row['last_name']}}</td>
+					
+					<td><textarea rows="4" cols="50" readonly=""> {{row['complaint']}}</textarea></td>
+					<td>{{row['complaint_date']}}</td>
+					{% if row['reply']=='pending' %}
+					<td><textarea rows="4" cols="50" name="reply{{loop.index}}"> </textarea>
+					<input type="submit" name="submit{{loop.index}}" value="Send" class="btn btn-primary"></td>
+					{% else%}
+					<td><textarea rows="4" cols="50" readonly=""> {{row['reply']}}</textarea></td>
+					{% endif %}
+	
+				</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+	</center>
+	
+</form>
+{% include 'admin/admin_footer.html' %}

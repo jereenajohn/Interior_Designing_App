@@ -1,0 +1,59 @@
+{% include 'designers/designer_header.html' %}
+<br><br>
+<header id="header" style="background-image: url(/static/assets/images/pxfuel\ \(3\).jpg);height: auto;background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover; margin-top: -50px;">
+
+<form method="post">
+	<center>
+		<h2 style="color: rgb(3, 206, 210); margin-top: 20px;">User Requirements</h2>
+		<br><br>
+		<div class="table-responsive">
+
+	<table border="1" style="width: 700px" class="table table-dark">
+			<tr>
+				<th>User Name</th>
+				<th>Design</th>
+				<th>Design Type</th>
+				<th>Quantity</th>
+				<th>Material Name</th>
+				<th>Requirement Date</th>
+				<th>Status</th>
+				<!-- <th bgcolor="pink">Chat With User</th> -->
+				<th>Send proposal Amount</th>
+				
+				
+				
+			</tr>
+			<tbody>
+				{% for row in data['viewrqrmnts'] %}
+				<tr>
+					<td>{{row['uname']}}</td>
+					<td><img src="/{{row['photo']}}" height="100" width="100"></td>
+					<td>{{row['design_type']}}</td>
+					<td>{{row['quantity']}}</td>
+					<td>{{row['material_name']}}</td>
+					
+
+					<td>{{row['requirement_date']}}</td>
+					<td>{{row['requirement_status']}}</td>
+					<!-- <td bgcolor="pink"><a href="designeruserchat?uid={{row['user_id']}}&fname={{row['uname']}}&rid={{row['requirement_id']}}"class="btn btn-primary">Chat</a></td> -->
+					{% if row['price'] %}
+						<td>{{row['price']}}</td>
+						{% else %}
+					<td>
+						
+						<input type="text" name="ppl{{loop.index}}" placeholder="amount">
+						<input type="submit" name="submit{{loop.index}}" value="Send proposal" class="btn btn-primary">
+						
+					</td>
+
+					{% endif %}
+					
+				</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+	</center>
+	
+</form>
+{% include 'designers/designer_footer.html' %}

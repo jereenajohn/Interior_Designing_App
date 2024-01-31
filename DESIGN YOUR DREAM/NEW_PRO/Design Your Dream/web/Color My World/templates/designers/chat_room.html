@@ -1,0 +1,31 @@
+{% include 'designers/designer_header.html' %}
+<br><br>
+<form method="post">
+	<center>
+	<table class="table" style="width: 600px;">
+		<tr>
+			<th>Message</th>
+			<td><input type="text" class="form-control" name="msg"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right"><input type="submit" class="btn btn-primary" name="message" value="SEND"></td>
+		</tr>
+	</table>
+	<table align="center" class="table" style="width: 800px;">
+		
+		{% for row in data['chat'] %}
+		<tr>
+			{% if row['sender_id']==data['login_id'] %}
+				<td></td>
+				<td style="background-color: #B2F8E5; color: black;"><b>{{row['message']}} <br>{{row['message_date']}}</b></td>
+			{% else %}
+				
+				<td style="background-color: #A9F78C; color: black;"><b>{{row['message']}} <br>{{row['message_date']}}</b></td>
+				<td></td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+</form>
+{% include 'designers/designer_footer.html' %}

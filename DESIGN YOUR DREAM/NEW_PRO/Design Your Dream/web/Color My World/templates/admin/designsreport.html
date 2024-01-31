@@ -1,0 +1,50 @@
+<body onload="printDiv()">
+    <div id="div_print" >
+        <center>
+            <font style="font-family:times new roman">
+            <h1 style="color: #3ccadd;"><b>List Of Designs<b></h1>
+<table>
+            <tr>
+				<th>Designer Name</th>
+				<th>Design Name</th>
+				<th>Photo</th>
+				<th>Type</th>
+				<th>Material Name</th>
+				<th>Description</th>
+				<th>Price per Piece</th>
+				<th>Color</th>
+			</tr>
+			<tbody>
+				{% for row in data['record'] %}
+				<tr>
+					<td>{{row['first_name']}} {{row['last_name']}}</td>
+					
+					<td>{{row['name']}}</td>
+
+					<td><img src="/{{row['photo']}}" height="100" width="100"></td>
+					<td>{{row['type']}}</td>
+					<td>{{row['material_name']}}</td>
+					<td><textarea rows="4" cols="50" readonly=""> {{row['description']}}</textarea></td>
+					<td>{{row['price_per_piece']}}</td>
+					<td>{{row['color']}}</td>
+
+					
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+            <p><a class="btn" style="color :rgb(0, 0, 0);"  href="viewdesigns">back</a></p><br>
+
+		</center>
+	</form>
+    <script> 
+        function printDiv() { 
+          var divContentss = document.getElementById("div_print").innerHTML; 
+          var a = window.open('', '', 'height=500, width=500'); 
+          a.document.write(divContentss); 
+          a.document.close(); 
+          a.print(); 
+        } 
+        </script>
+      </div>
+      </body>

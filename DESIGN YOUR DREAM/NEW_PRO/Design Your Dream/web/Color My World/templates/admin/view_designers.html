@@ -1,0 +1,94 @@
+{% include 'admin/admin_header.html' %}
+
+<!-- <br><br>
+<form method="post" style="background-color: rgb(255, 255, 255);">
+	<center>
+		<h2 style="color: red;margin-left: -170px;">List Of</h2>
+		<h2 style="color: rgb(12, 12, 12);margin-left:80px;margin-top: -40px;">Designers</h2>
+		<br><br>
+		<p><a class="btn" style="color :white; background-color: darkgreen;"  href="designerreport">Print</a></p><br>
+	<table border="1" style="width: 700px"  class="table-responsive">
+			<tr>
+				<th>Name</th>
+				<th>Company Name</th>
+				<th>Place</th>
+				<th>Pincode</th>
+				<th>Phone</th>
+				<th>Email</th>
+			</tr>
+			<tbody>
+				{% for row in data['viewdesigners'] %}
+				<tr>
+					<td>{{row['first_name']}} {{row['last_name']}}</td>
+					
+					<td>{{row['company_name']}}</td>
+					<td>{{row['place']}}</td>
+					<td>{{row['pincode']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['email']}}</td>
+					{% if row['usertype']=="pending"%}
+					<td><a href="?action=accept&lid={{row['login_id']}}" class="btn" style="background-color: green;">Accept</a></td>
+					<td><a href="?action=reject&lid={{row['login_id']}}" class="btn" style="background-color: red;">Reject</a></td>
+					{% endif %}
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</center>
+	</form> -->
+
+
+
+	<br>
+	<center>
+		<!-- <header id="header" style="background-image: url(/static/assets/img/spacejoy-4xRP0Ajk9ys-unsplash.jpg);height: auto;background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover; padding-top: 40px; margin-top: -50px; "> -->
+	
+	<h2 style="color:  rgb(3, 206, 210);margin-left: -190px;">List Of</h2>
+	<h2 style="color: rgb(12, 12, 12);margin-left:80px;margin-top: -45px;"> Designers</h2>
+	<header id="header" style="background-image: url(/static/assets/images/nordwood-themes-nDd3dIkkOLo-unsplash.jpg);height: auto;background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover; padding-top: 40px; margin-top: -60px; ">
+		<p><a class="btn" style="color :white; background-color: darkgreen; margin-top: 40px;"  href="designerreport">Print</a></p><br>
+
+			<h6 class="mb-4"></h6>
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+				<th>Name</th>
+				<th>Company Name</th>
+				<th>Place</th>
+				<th>Pincode</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th></th>
+				<th></th>
+				
+						</tr>
+					</thead>
+					<tbody>
+						{% for row in data['viewdesigners'] %}
+						<tr>
+							<td>{{row['first_name']}} {{row['last_name']}}</td>
+					
+					<td>{{row['company_name']}}</td>
+					<td>{{row['place']}}</td>
+					<td>{{row['pincode']}}</td>
+					<td>{{row['phone']}}</td>
+					<td>{{row['email']}}</td>
+					{% if row['usertype']=="pending"%}
+					
+					<td><a href="?action=accept&lid={{row['login_id']}}" class="btn" style="background-color: green; color: white; width: 100px;">Accept</a></td>
+					<td><a href="?action=reject&lid={{row['login_id']}}" class="btn" style="background-color: red; color: white; width: 100px;">Reject</a></td>
+					{% elif  row['usertype']=="designer" %} 
+					<td><a href="/admin/sales?did={{row['designer_id']}}" class="btn" style="background-color: rgb(17, 145, 162); color: white; ">view sales</a></td><td></td>
+
+
+					{% endif %}
+						</tr>
+						{% endfor %}
+						
+					</tbody>
+				</table>
+			</center>
+			</div>
+			<!-- </header> -->
+{% include 'admin/admin_footer.html' %}

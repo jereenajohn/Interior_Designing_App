@@ -1,0 +1,171 @@
+{% include 'public/public_header.html' %}
+
+ <!-- <br><br>
+<header id="header" style="background-image: url(/static/assets/images/hello.jpg);height: auto;background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover; padding-top: 40px; margin-top: -50px;">
+
+<form method="post">
+	<center>
+		<h2 style="color: red;margin-left: -140px;">Designer</h2>
+		<h2 style="color: rgb(12, 12, 12);margin-left:160px;margin-top: -40px;">Registration</h2>
+		
+		<br><br>
+	
+		<table border="1" class="table table-striped" style="width: 700px">
+			<tr>
+				<th>First Name</th>
+				<td><input type="text" name="fname" class="form-control" required="" pattern="[A-Za-z]{0,30}"></td>
+			</tr>
+			<tr>
+				<th>Last Name</th>
+				<td><input type="text" name="lname" class="form-control" required="" pattern="[A-Za-z]{0,30}"></td>
+			</tr>
+			<tr>
+				<th>Company Name</th>
+				<td><input type="text" name="cname" class="form-control" required=""></td>
+			</tr>
+			<tr>
+				<th>Place</th>
+				<td><input type="text" name="place" class="form-control" required pattern="[A-Za-z]{0,30}"> </td>
+			</tr>
+			<tr>
+				<th>Pincode</th>
+				<td><input type="text" name="pin" class="form-control" required pattern="[0-9]{6}"> </td>
+			</tr>
+			<tr>
+				<th>Phone</th>
+				<td><input type="text" name="phn" class="form-control" required="" pattern="[0-9]{10}"></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><input type="email" name="email" class="form-control" required=""></td>
+			</tr>
+			<tr>
+				<th>User Name</th>
+				<td><input type="text" name="uname" class="form-control" required=""></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" name="pwd" class="form-control" ></td>
+			</tr>
+			<tr>
+				
+				<td colspan="2" align="center"><input type="submit" name="submit" value="submit"></td>
+			</tr>
+		</table>
+		
+
+	</center>
+	
+</form> 
+
+ -->
+
+
+ <style>
+	input[type=text]{
+	  border: 2px solid rgba(145, 143, 143, 0.596);
+	  border-radius: 4px;
+	}
+	input[type=email] {
+	  border: 2px solid rgba(137, 135, 135, 0.596);
+	  border-radius: 4px;
+	}
+	input[type=password] {
+	  border: 2px solid rgba(137, 135, 135, 0.596);
+	  border-radius: 4px;
+	}
+
+	</style>
+	 <br><br>
+	<header id="header" style="background-image: url(/static/assets/img/katja-rooke-77JACslA8G0-unsplash.jpg);height: auto;background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover; padding-top: 40px; margin-top: -50px; ">
+	<div class="container p-0" style="width: 500px;margin-top: 50px;padding-bottom: 20px;margin-bottom:100px;">
+		<div class="card px-4" style="box-shadow: rgba(240, 242, 243, 0.364) 0px 54px 55px,  rgb(3, 3, 3) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+			<!-- <input type="hidden" formControlName="request_id" /> -->
+			  <p class="h8 py-3"></p>
+			  <div class="row gx-3">
+		<form method="post" style="margin-bottom: 30px;">
+			<center>
+				<h2 style="color: rgb(3, 206, 210);margin-left: -170px;">Designer</h2>
+				<h2 style="color: rgb(12, 12, 12);margin-left:160px;margin-top: -45px;">Registration</h2>
+				
+				<br><br>
+<!-- <table border="1" class="table table-striped"> -->
+			
+	<div class="col-12">
+		<div class="d-flex flex-column">
+	<input type="text" name="fname" class="form-control mb-3 pt-2 "  required="" pattern="[A-Za-z]{0,30}" placeholder="first name">
+	
+</div>
+</div>
+
+<div class="col-12">
+	<div class="d-flex flex-column">
+		<td><input type="text" name="lname" class="form-control mb-3 pt-2" required="" pattern="[A-Za-z]{0,30}" placeholder="last name"></td>
+	</div>
+</div>
+
+<div class="col-12">
+	<div class="d-flex flex-column">
+		<td><input type="text" name="cname" class="form-control mb-3 pt-2" required="" placeholder="company name"></td>
+	</div>
+</div>
+
+<div class="col-12">
+	<div class="d-flex flex-column">
+		
+		<td><input type="text" name="place" class="form-control mb-3 pt-2" required pattern="[A-Za-z]{0,30}" placeholder="Place"> </td>
+	</div>
+</div>
+<div class="col-12">
+	<div class="d-flex flex-column">
+		
+		<td><input type="text" name="pin" class="form-control mb-3 pt-2" required pattern="[0-9]{6}" placeholder="pincode"> </td>
+	</div>
+</div>
+
+<div class="col-12">
+	<div class="d-flex flex-column">
+		
+	
+		<td><input type="text" name="phn" class="form-control mb-3 pt-2" required="" pattern="[0-9]{10}" placeholder="Phone"></td>
+	</div>
+</div>
+
+<div class="col-12">
+	<div class="d-flex flex-column">
+		
+		<td><input type="email" name="email" class="form-control mb-3 pt-2" required="" placeholder="Email"></td>
+	</div>
+</div>
+<div class="col-12">
+	<div class="d-flex flex-column">
+		<td><input type="text" name="uname" class="form-control mb-3 pt-2" required="" placeholder="uname"></td>
+	</div>
+</div>
+
+<div class="col-12">
+	<div class="d-flex flex-column">
+		<td><input type="password" name="pwd" class="form-control mb-3 pt-2"  required="" placeholder="password"></td>
+	</div>
+</div>
+
+<div class="col-6">
+		<input type="submit" name="submit" value="submit" class="btn btn-primary w-100 py-3">
+	</div>
+	
+
+</center>
+</form> 
+
+</div>
+</div>
+</div>
+</div>
+
+
+</header>
+
+
+
+
+{% include 'public/public_footer.html' %}

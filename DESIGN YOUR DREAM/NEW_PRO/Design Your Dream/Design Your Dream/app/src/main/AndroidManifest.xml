@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.color_my_world"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="30" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".User_view_room_designs"></activity>
+        <activity android:name=".User_view_curtain_designs" />
+        <activity android:name=".IPsetting">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Model_details" />
+        <activity android:name=".PHOTO" />
+        <activity android:name=".FitEarring" />
+        <activity
+            android:name=".Login"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Registration"
+            android:label="@string/title_activity_registration" />
+        <activity
+            android:name=".User_home"
+            android:label="@string/title_activity_user_home" />
+        <activity
+            android:name=".User_view_designs"
+            android:label="@string/title_activity_user_view_designs" />
+        <activity
+            android:name=".User_view_designer"
+            android:label="@string/title_activity_user_view_designer" />
+        <activity
+            android:name=".User_message_designer"
+            android:label="@string/title_activity_user_message_designer" />
+        <activity
+            android:name=".User_send_feedback"
+            android:label="@string/title_activity_user_send_feedback" />
+        <activity
+            android:name=".User_send_complaint"
+            android:label="@string/title_activity_user_send_complaint" />
+        <activity
+            android:name=".User_requirement"
+            android:label="@string/title_activity_user_requirement" />
+        <activity
+            android:name=".User_view_requirement"
+            android:label="@string/title_activity_user_view_requirement" />
+        <activity
+            android:name=".User_view_proposal"
+            android:label="@string/title_activity_user_view_proposal" />
+        <activity
+            android:name=".User_payment"
+            android:label="@string/title_activity_user_payment" />
+        <activity android:name=".ChatHere" />
+        <activity android:name=".Customchat" />
+    </application>
+
+</manifest>

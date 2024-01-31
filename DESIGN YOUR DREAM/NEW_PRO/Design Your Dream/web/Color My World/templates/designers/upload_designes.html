@@ -1,0 +1,156 @@
+{% include 'designers/designer_header.html' %}
+<br><br>
+<header id="header" style="background-image: url(/static/assets/images/pxfuel\ \(3\).jpg);height: auto;background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover; margin-top: -50px;">
+
+<form method="post" enctype="multipart/form-data">
+	<center>
+		<h2 style="color: rgb(3, 206, 210); margin-top: 20px;">Designes</h2>
+		<br><br>
+		{% if data['updatedata'] %}
+		<div class="table-responsive">
+
+		<table border="1"  class="table table-dark"style="width: 700px">
+		
+			<tr>
+				<th >Design Type</th>
+				<td><select name="type" id="" class="form-control">
+					<option value="curtain">Curtain</option>
+					<option value="room">Room</option>
+				</select></td>
+				
+				<!-- <td ><input type="radio" name="type" checked value="curtain">&nbsp;&nbsp;&nbsp;Curtain &nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="type"  value="room">&nbsp;&nbsp;&nbsp;Room </td> -->
+					</tr>
+			<tr>
+				<th>Name</th>
+				<td><input type="text" name="dname" class="form-control" required value="{{data['updatedata'][0]['name']}}"> </td>
+			</tr>
+			<tr>
+				<th>Photo</th>
+				<td><input type="file" name="photo" class="form-control" required  value="{{data['updatedata'][0]['photo']}}"> </td>
+			</tr>
+			<tr>
+				<th>Material Name</th>
+				<td>
+					<select name="mname" class="form-control" required>
+					<option selected="" readonly>Select</option>
+					{% for row in data['viewmaterial'] %}
+					<option value="{{row['material_id']}}">{{row['material_name']}}</option>
+					{% endfor %}
+					</select>
+				 </td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td><textarea rows="4" cols="50" name="des" class="form-control" required="">{{data['updatedata'][0]['description']}}</textarea></td>
+				
+			</tr>
+			<tr>
+				<th>Price Per Piece</th>
+				<td><input type="text" name="price" class="form-control" required value="{{data['updatedata'][0]['price_per_piece']}}"> </td>
+			</tr>
+			
+			<tr>
+				
+				<td colspan="2" align="center"><input type="submit" name="update" value="submit" style="background-color: green; color: white;"></td>
+			</tr>
+		</table>
+
+		{% else %}
+		<div class="table-responsive">
+
+		<table border="1"  class="table table-dark" style="width: 700px">
+		
+			<tr>
+				<th >Design Type</th>
+				<td><select name="type" id="" class="form-control">
+					<option value="curtain">Curtain</option>
+					<option value="room">Room</option>
+				</select></td>
+				
+				<!-- <td ><input type="radio" name="type" checked value="curtain">&nbsp;&nbsp;&nbsp;Curtain &nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="type"  value="room">&nbsp;&nbsp;&nbsp;Room </td> -->
+					</tr>
+			<tr>
+				<th>Name</th>
+				<td><input type="text" name="dname" class="form-control" required> </td>
+			</tr>
+			<tr>
+				<th>Photo</th>
+				<td><input type="file" name="photo" class="form-control" required> </td>
+			</tr>
+			<tr>
+				<th>Material Name</th>
+				<td>
+					<select name="mname" class="form-control" required="">
+					<option selected="" readonly>Select</option>
+					{% for row in data['viewmaterial'] %}
+					<option value="{{row['material_id']}}">{{row['material_name']}}</option>
+					{% endfor %}
+					</select>
+				 </td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td><textarea rows="4" cols="50" name="des" class="form-control" required=""></textarea></td>
+				
+			</tr>
+			<tr>
+				<th>Price Per Piece</th>
+				<td><input type="text" name="price" class="form-control" required> </td>
+			</tr>
+			
+			<tr>
+				
+				<td colspan="2" align="center"><input type="submit" name="submit" value="submit" style="background-color: green; color: white;"></td>
+			</tr>
+		</table>
+		{% endif %}
+		<br><br>
+		<center>
+			<h2 style="color: rgb(3, 206, 210);">View Designs</h2>
+			<br><br>
+			<div class="table-responsive">
+
+		<table border="1" style="width: 100px; " class="table table-dark" >
+			<tr>
+				
+				<th>Design Type</th>
+				<th>Design Name</th>
+				<th>Photo</th>
+				<th>Material Name</th>
+				<th>Description</th>
+				<th>Price per Piece</th>
+				<th>Status</th>
+				<th></th>
+				
+				
+				<th></th>
+
+			</tr>
+			<tbody>
+				{% for row in data['viewdesigns'] %}
+				<tr>
+					
+					<td>{{row['type']}}</td>
+					<td>{{row['name']}}</td>
+					<td><img src="/{{row['photo']}}" height="100" width="100"></td>
+					<td>{{row['material_name']}}</td>
+					<td><textarea rows="4" cols="50" readonly=""> {{row['des']}}</textarea></td>
+					<td>{{row['price_per_piece']}}</td>
+					<td>{{row['status']}}</td>
+					{% if row['status']=='pending' %}
+					<td><a href="?action=update&did={{row['design_id']}}" class="btn" style="background-color: green; color:white	;">Update</a></td><br>
+						<td><a href="?action=delete&did={{row['design_id']}}" class="btn btn-primary">Delete</a ></td>
+							
+						{% else %}
+						<td><a href="?action=delete&did={{row['design_id']}}" class="btn btn-primary">Delete</a ></td><td></td>
+							{% endif %}
+
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+	</center>
+</form>
+{% include 'designers/designer_footer.html' %}

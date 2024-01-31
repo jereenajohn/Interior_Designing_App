@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2c152d"
+    android:orientation="vertical"
+
+    tools:context=".Model_details" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+         />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff"
+        android:layout_gravity="left"
+        android:text="Product Name : "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewpname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff"
+        android:text="pname"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+       </TableRow>
+
+<!--        <TableRow-->
+<!--            android:id="@+id/tableRow2"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" >-->
+<!--     <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="#ffff"-->
+<!--        android:layout_gravity="left"-->
+<!--        android:text="Description : "-->
+<!--        android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewdesc"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="#ffff"-->
+<!--        android:text="desc"-->
+<!--        android:textAppearance="?android:attr/textAppearanceMedium" />-->
+<!--        -->
+<!--        </TableRow>-->
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff"
+        android:layout_gravity="left"
+        android:text="Price : "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff"
+        android:text="price"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        </TableRow>
+
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffff"
+                android:layout_gravity="left"
+                android:text="Quantity : "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textViewquantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffff"
+                android:text="quantity"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="TRY"
+        android:textColor="#ffff" />
+
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="#ffff"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="BUY" />-->
+
+</LinearLayout>

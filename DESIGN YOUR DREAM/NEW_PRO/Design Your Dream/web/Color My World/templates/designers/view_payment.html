@@ -1,0 +1,41 @@
+{% include 'designers/designer_header.html' %}
+<br><br>
+<form method="post">
+	<center>
+		<h2 style="color:  rgb(3, 206, 210)";>User Payments</h2>
+		<br><br>
+		<div class="table-responsive">
+	<table border="1" style="width: 700px" class="table table-dark">
+			<tr>
+				<th bgcolor="pink">User Name</th>
+				<th bgcolor="pink">Amount</th>
+				
+				<th bgcolor="pink">Payment Date</th>
+				<th bgcolor="pink"></th>
+				
+				
+				
+				
+				
+			</tr>
+			<tbody>
+				{% for row in data['viewpayments'] %}
+				<tr>
+					<td bgcolor="pink">{{row['uname']}}</td>
+					
+					<td bgcolor="pink">{{row['amount']}}</td>
+					<td bgcolor="pink">{{row['payment_date']}}</td>
+					<td></td>
+					<!-- <td bgcolor="pink"><a href="?action=update&ids={{row['proposal_id']}}" class="btn btn-primary">Confirm delivery</a></td> -->
+					
+					
+					
+				</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+	</center>
+	
+</form>
+{% include 'designers/designer_footer.html' %}

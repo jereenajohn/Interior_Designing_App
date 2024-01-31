@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Color_my_world</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_user_home">User_home</string>
+    <string name="title_activity_user_view_designs">User_view_designs</string>
+    <string name="title_activity_user_view_designer">User_view_designer</string>
+    <string name="title_activity_user_message_designer">User_message_designer</string>
+    <string name="title_activity_user_send_feedback">User_send_feedback</string>
+    <string name="title_activity_user_send_complaint">User_send_complaint</string>
+    <string name="title_activity_user_requirement">User_requirement</string>
+    <string name="title_activity_user_view_requirement">User_view_requirement</string>
+    <string name="title_activity_user_view_proposal">User_view_proposal</string>
+    <string name="title_activity_user_payment">User_payment</string>
+
+</resources>

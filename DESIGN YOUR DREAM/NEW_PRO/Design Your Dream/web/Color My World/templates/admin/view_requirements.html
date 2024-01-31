@@ -1,0 +1,67 @@
+{% include 'admin/admin_header.html' %}
+<br><br>
+
+<form method="post">
+	<center>
+
+		<center>
+			<h1>SEARCH SALES</h1>
+			<form method="post">
+			  <table style="color: black;width: 100px">
+		  
+			
+				 <td style="color: white"><input type="date" name="daily" > DAILY  </td>
+				 
+				  <td  style="color: white"> <input type="month" name="monthly"> MONTHLY </td>
+				  
+				  
+			   <tr>
+				 <td align="center" colspan="5"><input type="submit" name="sale" class="btn btn-success" value="SEARCH"></td>
+				</tr>
+			  
+		  
+				</tr>
+			  </table>
+			</form>
+		  
+		  </center>
+		<h2 style="color:  rgb(3, 206, 210);margin-left: -200px; margin-top: 40px;">List Of</h2>
+		<h2 style="color: rgb(12, 12, 12);margin-left:130px;margin-top: -45px;">User Bookings</h2>
+		
+<br><br>
+<p><a class="btn" style="color :white; background-color: darkgreen;"  href="searchreport">Print</a></p><br>
+<div class="table-responsive">
+	<table border="1" style="width: 700px"  class="table table-striped">
+			<tr>
+				<th>User Name</th>
+				<th>Design</th>
+				<th>Design Type</th>
+				<th>Quantity</th>
+				<th>Material Name</th>
+				<th>Requirement Date</th>
+				<th>Status</th>
+				
+				
+				
+			</tr>
+			<tbody>
+				{% for row in data['viewrqrmnts'] %}
+				<tr>
+					<td>{{row['uname']}}</td>
+					<td><img src="/{{row['photo']}}" height="100" width="100"></td>
+					<td>{{row['design_type']}}</td>
+					<td>{{row['quantity']}}</td>
+					<td>{{row['material_name']}}</td>
+					<td>{{row['requirement_date']}}</td>
+					<td>{{row['proposal_status']}}</td>
+					
+					
+				</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+	</center>
+	
+</form>
+{% include 'admin/admin_footer.html' %}

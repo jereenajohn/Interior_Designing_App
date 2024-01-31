@@ -1,0 +1,38 @@
+{% include 'designers/designer_header.html' %}
+<br><br>
+<header id="header" style="background-image: url(/static/assets/images/pxfuel\ \(3\).jpg);height: auto;background-attachment: fixed;background-repeat: no-repeat;background-position: center;background-size: cover; margin-top: -50px;">
+
+<form method="post">
+	<center>
+		<h2 style="color:  rgb(3, 206, 210); margin-top: 30px;">User Feedback</h2>
+		<br><br>
+		<div class="table-responsive">
+
+	<table border="1" style="width: 700px"  class="table table-dark">
+			<tr>
+				<th>User Name</th>
+				<th>Feedback</th>
+				
+				<th>Date</th>	
+				
+			</tr>
+			<tbody>
+				{% for row in data['viewfeedback'] %}
+				<tr>
+					<td>{{row['uname']}}</td>
+					
+					<td><textarea rows="4" cols="50" readonly=""> {{row['description']}}</textarea></td>
+					<td>{{row['feedback_date']}}</td>
+					
+					
+					
+					
+				</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+	</center>
+	
+</form>
+{% include 'designers/designer_footer.html' %}

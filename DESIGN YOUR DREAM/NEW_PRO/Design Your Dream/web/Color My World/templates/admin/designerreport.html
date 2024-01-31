@@ -1,0 +1,47 @@
+<body onload="printDiv()">
+    <div id="div_print" >
+
+        <center>
+            <font style="font-family:times new roman">
+            <h1 style="color: #3ccadd;"><b>Designer List<b></h1>
+           
+ 
+  <table class="table" style="width: 1000px;color: black;font-style: italic;border-collapse: collapse;font-family: monospace;font-size: 22px" border="5">
+    <tr>
+        <th>Name</th>
+        <th>Company Name</th>
+        <th>Place</th>
+        <th>Pincode</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    <tbody>
+        {% for row in data['record'] %}
+        <tr>
+            <td>{{row['first_name']}} {{row['last_name']}}</td>
+            
+            <td>{{row['company_name']}}</td>
+            <td>{{row['place']}}</td>
+            <td>{{row['pincode']}}</td>
+            <td>{{row['phone']}}</td>
+            <td>{{row['email']}}</td>
+        
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><a class="btn" style="color :rgb(0, 0, 0);"  href="viewdesigners">back</a></p><br>
+
+</center>
+</form>
+<script> 
+    function printDiv() { 
+      var divContentss = document.getElementById("div_print").innerHTML; 
+      var a = window.open('', '', 'height=500, width=500'); 
+      a.document.write(divContentss); 
+      a.document.close(); 
+      a.print(); 
+    } 
+    </script>
+  </div>
+  </body>

@@ -1,0 +1,48 @@
+<body onload="printDiv()">
+    <div id="div_print" >
+
+        <center>
+            <font style="font-family:times new roman">
+            <h1 style="color: #3ccadd;"><b>Designer List<b></h1>
+           
+ 
+  <table class="table" style="width: 1000px;color: black;font-style: italic;border-collapse: collapse;font-family: monospace;font-size: 22px" border="5">
+    <tr>
+        <th>User Name</th>
+        <th> Design</th>
+        <th>Proposed Amount</th>
+        <th>Proposal Date</th>
+        <th>Status</th>
+        <!-- <th>Email</th> -->
+    </tr>
+    <tbody>
+        {% for row in data['viewsales'] %}
+        <tr>
+            <td>{{row['uname']}}</td>
+            <td><img src="/{{row['photo']}}" height="100" width="100"></td>
+            <td>{{row['price']}}</td>
+            <td>{{row['proposal_date']}}</td>
+            <td>{{row['proposal_status']}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><a class="btn" style="color :rgb(0, 0, 0);"  href="viewsales">back</a></p><br>
+
+</center>
+</form>
+<script> 
+    function printDiv() { 
+      var divContentss = document.getElementById("div_print").innerHTML; 
+      var a = window.open('', '', 'height=500, width=500'); 
+      a.document.write(divContentss); 
+      a.document.close(); 
+      a.print(); 
+    } 
+    </script>
+  </div>
+  </body>

@@ -1,0 +1,52 @@
+<body onload="printDiv()">
+    <div id="div_print" >
+        <center>
+            <font style="font-family:times new roman">
+            <h1 style="color: #3ccadd;"><b>Sales Report<b></h1>
+ 
+  <table class="table" style="width: 1000px;color: black;font-style: italic;border-collapse: collapse;font-family: monospace;font-size: 22px" border="5">
+    <tr>
+        <th>User Name</th>
+        <th>Design</th>
+        <th>Design Type</th>
+        <th>Quantity</th>
+        <th>Material Name</th>
+        <th>Requirement Date</th>
+        <th>Status</th>
+        
+        
+        
+    </tr>
+    <tbody>
+        {% for row in data['record'] %}
+        <tr>
+            <td>{{row['uname']}}</td>
+            <td><img src="/{{row['photo']}}" height="100" width="100"></td>
+            <td>{{row['design_type']}}</td>
+            <td>{{row['quantity']}}</td>
+            <td>{{row['material_name']}}</td>
+            <td>{{row['requirement_date']}}</td>
+            <td>{{row['proposal_status']}}</td>
+            
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>
+<p><a class="btn" style="color :rgb(20, 20, 20);"  href="viewrequirements">back</a></p><br>
+
+</center>
+	
+</form>
+<script> 
+    function printDiv() { 
+      var divContentss = document.getElementById("div_print").innerHTML; 
+      var a = window.open('', '', 'height=500, width=500'); 
+      a.document.write(divContentss); 
+      a.document.close(); 
+      a.print(); 
+    } 
+    </script>
+  </div>
+  </body>
